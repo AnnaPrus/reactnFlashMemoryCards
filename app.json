@@ -1,0 +1,17 @@
+{
+  "name": "udeacityFleshCardsV2",
+  "displayName": "udeacityFleshCardsV2",
+  "expo": {
+    "name": "udeacityFleshCardsV2",
+    "slug": "udeacityFleshCardsV2",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
