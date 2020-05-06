@@ -10,10 +10,10 @@ class AddCard extends React.Component {
     }
 
     static navigationOptions = {
-        title: 'Home',
+        title: 'Add deck',
         headerTintColor: "#f9df81",
         headerStyle: {
-          backgroundColor: '#4f869b'
+          backgroundColor: '#127C78'
         },
         headerBackTitleStyle: {fontSize: 15,},
      }

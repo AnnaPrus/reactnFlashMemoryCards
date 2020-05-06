@@ -3,9 +3,6 @@ import {View, TextInput, StyleSheet, Text, TouchableOpacity, Left} from 'react-n
 import {addDeck} from '../actions/action'
 import { connect } from 'react-redux'
 import {setScore, getScore} from '../actions/action'
-import { Ionicons } from '@expo/vector-icons';
-
-
 
 class CreateDeck extends React.Component {
     constructor(props) {
@@ -16,7 +13,7 @@ class CreateDeck extends React.Component {
         title: 'Create Deck',
         headerTintColor: "#f9df81",
         headerStyle: {
-          backgroundColor: '#4f869b',
+          backgroundColor: '#127C78',
         },
         headerBackTitleStyle: {fontSize: 15,},
      }

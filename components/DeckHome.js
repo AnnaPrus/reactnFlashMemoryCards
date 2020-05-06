@@ -4,14 +4,6 @@ import { connect } from 'react-redux'
 import { NavigationActions } from 'react-navigation'
 import { Ionicons } from '@expo/vector-icons';
 
-/* const resetAction = (deck) => {NavigationActions.reset({
-  index: 0,
-  actions: [
-    NavigationActions.navigate({ routeName: 'Home'}),
-    NavigationActions.navigate({ routeName: 'DeckHome', params:{deck : deck}})
-  ]
-})} */
-
 class DeckHome extends React.Component {
   constructor(props){
     super(props)
@@ -21,11 +13,14 @@ class DeckHome extends React.Component {
         title: 'Deck Home',
         headerTintColor: "#f9df81",
         headerStyle: {
-          backgroundColor: '#4f869b'
+          backgroundColor: '#127C78'
         },
         headerTitleStyle: { color: '#f9df81' },
         headerBackTitleStyle: {fontSize: 15,},
-        headerLeft: <TouchableOpacity style={{marginLeft: 19}} onPress={() => { navigation.replace('DeckList')}}><Ionicons color = '#f9df81' size={25} name={Platform.OS === 'ios' ? 'ios-arrow-back' : 'md-arrow-back'}/></TouchableOpacity>
+        headerLeft: <TouchableOpacity 
+          style={{marginLeft: 19}} onPress={() => { navigation.replace('DeckList')}}>
+            <Ionicons color = '#f9df81' size={25} name={Platform.OS === 'ios' ? 'ios-arrow-back' : 'md-arrow-back'}/>
+          </TouchableOpacity>
     });
 
     render() {

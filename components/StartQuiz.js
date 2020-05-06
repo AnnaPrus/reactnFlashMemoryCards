@@ -11,11 +11,9 @@ class StartQuiz extends React.Component {
         title: 'Quiz',
         headerTintColor: "#f9df81",
         headerStyle: {
-          backgroundColor: '#4f869b'
+          backgroundColor: '#127C78'
         },
         headerBackTitleStyle: {fontSize: 15,},
-     /*    headerLeft:
-        <HeaderBarItem  title='Decks' />, */
     }
 
     goBakcToFirst=()=>{

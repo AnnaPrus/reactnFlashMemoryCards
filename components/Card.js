@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Animated,
   Dimensions,
-  TouchableWithoutFeedback,
 } from 'react-native';
 
 export default class Card extends Component {
@@ -40,11 +39,8 @@ export default class Card extends Component {
         tension: 10
       }).start();
     }
-
   }
-
   render() {
-
     const frontAnimatedStyle = {
       transform: [
         { rotateY: this.frontInterpolate }

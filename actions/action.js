@@ -40,9 +40,6 @@ import { AsyncStorage } from 'react-native';
         const cards = {...state, [deck]:{ ...stateDeck, questions:[...stateDeck['questions'], card] }};
         await AsyncStorage.setItem(key,
         JSON.stringify(cards));
-        //this.getData();
-        //let response = await AsyncStorage.getItem(key);
-        //let data = await JSON.parse(response) || {};
         dispatch(addC(deck, card))
       }
   }

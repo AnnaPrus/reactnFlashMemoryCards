@@ -18,13 +18,11 @@ class DeckList extends React.Component {
         title: 'Deck List',
         headerTintColor: "#f9df81",
         headerStyle: {
-          backgroundColor: '#4f869b'
+          backgroundColor: '#127C78'
         }
     }
 
     renderArray = ({item}) => {
-        const { params } = this.props.navigation.state;
-        const deck = this.props.data[item]
         return <ItemView item={item} props={this.props}/>
     }
     renderSeparator = () => {
@@ -92,10 +90,8 @@ const styles = StyleSheet.create({
 })
 
 function mapStateToProps (state, { navigation }) {
-    //const { entryId } = navigation.state.params
     return {
       data: state.cards,
     }
   }
-export default connect(mapStateToProps
-)(DeckList)
+export default connect(mapStateToProps)(DeckList)
