@@ -1,36 +1,40 @@
-import * as React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import Home from './components/Home'
+import CreateDeck from './components/CreateDeck'
+import DeckList from './components/DeckList'
+import DeckHome from './components/DeckHome'
+import AddCard from './components/AddCard'
+import StartQuiz from './components/StartQuiz'
+import {StackNavigator} from 'react-navigation';
+import { View } from 'react-native';
+import { Provider } from 'react-redux';
+import reducer from './reducer/index'
+import {createStore, applyMiddleware} from 'redux'
+import thunk from 'redux-thunk';
+import {setLocalNotification} from './helper/notification'
 
-const instructions = Platform.select({
-  ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
-  android: `Double tap R on your keyboard to reload,\nShake or press menu button for dev menu`,
+const MyApp = StackNavigator({
+  Home: { screen: Home },
+  CreateDeck: {screen: CreateDeck},
+  DeckList: {screen: DeckList},
+  DeckHome: {screen: DeckHome},
+  AddCard: {screen: AddCard},
+  StartQuiz: {screen: StartQuiz},
 });
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Welcome to React Native!</Text>
-      <Text style={styles.instructions}>To get started, edit App.js</Text>
-      <Text style={styles.instructions}>{instructions}</Text>
-    </View>
-  );
+export default class App extends React.Component {
+ async componentDidMount(){
+    await setLocalNotification()
+  }
+  render() {
+    console.disableYellowBox = true;
+    return (
+     <Provider store={createStore(reducer, applyMiddleware(thunk))}>
+        <View style={{flex: 1}}>
+          <MyApp/>
+        </View>
+      </Provider>
+    )
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+
