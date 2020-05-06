@@ -4,7 +4,7 @@ The user will be able to create decks of cards and added as many cards as he(she
 This application is built with React Native & Redux.
 
 ## Installation
-First, you have to install Node.js on your computer. Got to your project and execute these commands:
+First, you have to install Node.js on your computer. Go to your project and execute these commands:
 ```
 $ npm install
 $ npm start
